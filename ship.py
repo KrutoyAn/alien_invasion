@@ -13,7 +13,7 @@ class Ship():
         self.rect = self.image.get_rect()
 
         # Каждый новый корабль появляется у нижнего края экрана
-        self.rect.center = self.screen_rect.center
+        self.rect.midbottom = self.screen_rect.midbottom
 
         # Сохранение вещественной координаты центра корабля.
         self.x = float(self.rect.x)
@@ -39,5 +39,9 @@ class Ship():
         """Рисует корабль в текущей позиции."""
         self.screen.blit(self.image, self.rect)
 
+    def center_ship(self):
+        """Размещает корабль в центре нижней стороны."""
+        self.rect.midbottom = self.screen_rect.midbottom
+        self.x = float(self.rect.x)
 
 
